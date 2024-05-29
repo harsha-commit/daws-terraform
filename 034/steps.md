@@ -1,0 +1,34 @@
+# Steps
+
+- Create two EC2 instances
+  - Install nginx, configure html page using User data and start the server
+- Create Target group for these two instances
+  - Configure
+    - Target Group Name
+    - Protocol: Port (for load balancer to point)
+    - VPC
+    - Health checks
+- Create Application Load Balancer
+  - Configure
+    - Scheme
+    - VPC and Mappings
+      - Select atleast 2 subnets in different AZs (Mandatory, and in which ec2 instances reside)
+    - Attach Security Groups
+    - Configure Listeners and Rules
+      - Add a rule for practice ("/api/payment" -> target-group-2)
+- Create a Route53 record by DNS name of Load balancer and test using the Record Name
+- Create a Launch Template
+  - Create an AMI by stopping an instance and converting it to an image
+  - Use this AMI to create a Launch Template
+- Create Auto Scaling Group using the launch template
+  - Configure
+    - VPC and Subnets
+    - Load Balancer and its Target Group (ASG manages only its created instances in Target group)
+    - Health checks, Monitoring
+    - Scaling
+    - Instance Maintainance Policy for Scaling
+- Bonus
+  - Update an EC2 Instance (enable nginx service)
+  - Create an AMI from this
+  - Update Target Group's version by updating the AMI
+  - Perform Instance Refresh
