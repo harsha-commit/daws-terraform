@@ -1,8 +1,8 @@
 # Steps
 
-- Create two EC2 instances
+- Create three EC2 instances
   - Install nginx, configure html page using User data and start the server
-- Create Target group for these two instances
+- Create Target group for any two instances
   - Configure
     - Target Group Name
     - Protocol: Port (for load balancer to point)

@@ -1,3 +1,10 @@
-# Goals (Using AWS Point and Click Approach)
+# Assignment 34
 
-- Demonstrate Load Balancing, Auto Scaling and Target Groups using two instances
+## Goals
+
+- Demonstrate Load Balancing, Auto Scaling and Target Groups using three instances
+- Use AWS Point and Click Approach
+
+## Desired Result
+
+![](./alb.drawio.svg)
