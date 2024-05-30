@@ -11,3 +11,4 @@
   - Public IP of EC2 Instance
   - Private IP of EC2 Instance
 - Provide documentation for better user experience
+- Test the module
