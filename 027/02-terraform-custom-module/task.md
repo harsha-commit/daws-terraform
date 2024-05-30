@@ -2,10 +2,10 @@
 
 ## Goals
 
-- Demonstrate VPC, Subnets, Route Tables, Internet Gateway, NAT Gateway in two Availability Zones
+- Demonstrate VPC, Subnets, Internet Gateway in two Availability Zones
 - Use Terraform Modules and test it
   - Provide documentation for better user experience
 
 ## Desired Result
 
-![](./vpc-basic.drawio.svg)
+![](./vpc-v1.drawio.svg)

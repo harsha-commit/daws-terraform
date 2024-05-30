@@ -10,8 +10,7 @@ variable "environment" {
 }
 
 variable "common_tags" {
-  type    = map(any)
-  default = {}
+  type = map(any)
 }
 
 ### VPC Variables ###
@@ -91,3 +90,9 @@ variable "database_subnet_tags" {
   default = {}
 }
 
+### IGW Tags ###
+
+variable "igw_tags" {
+  type    = map(any)
+  default = {}
+}
