@@ -12,3 +12,5 @@
   - Private IP of EC2 Instance
 - Provide documentation for better user experience
 - Test the module
+  - Override some arguments
+  - Output Public IP of EC2 Instance
