@@ -86,6 +86,7 @@ resource "aws_route" "public_peering" {
 }
 
 ### Default Subnet to Public Subnet VPC Peering Route ###
+# All subnets of Default VPC have one main route table
 resource "aws_route" "default_peering" {
   count                     = var.is_peering_required && var.peer_vpc_id == "" ? 1 : 0
   route_table_id            = data.aws_vpc.this.main_route_table_id
