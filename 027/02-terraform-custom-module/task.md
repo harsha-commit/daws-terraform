@@ -8,4 +8,4 @@
 
 ## Desired Result
 
-![](./vpc-v1.drawio.svg)
+![](../../assignment-svgs/vpc-v1.drawio.svg)

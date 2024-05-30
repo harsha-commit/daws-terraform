@@ -7,4 +7,4 @@
 
 ## Desired Result
 
-![](./vpc-v3.drawio.svg)
+![](../../assignment-svgs/vpc-v3.drawio.svg)
