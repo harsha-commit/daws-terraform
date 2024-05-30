@@ -14,3 +14,6 @@
 - Test the module
   - Override some arguments
   - Output Public IP of EC2 Instance
+- Store Module and Module Tester in GitHub Repository
+
+## Questions
