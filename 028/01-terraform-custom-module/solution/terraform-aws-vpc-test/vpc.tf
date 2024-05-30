@@ -6,4 +6,7 @@ module "vpc-test" {
   public_cidr_blocks   = var.public_cidr_blocks
   private_cidr_blocks  = var.private_cidr_blocks
   database_cidr_blocks = var.database_cidr_blocks
+
+  is_peering_required = var.is_peering_required
+  # peer_vpc_id = "<SOME_VPC_ID_HERE>"
 }

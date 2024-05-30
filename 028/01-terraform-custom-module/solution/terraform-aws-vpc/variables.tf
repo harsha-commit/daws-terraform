@@ -90,9 +90,56 @@ variable "database_subnet_tags" {
   default = {}
 }
 
-### IGW Tags ###
+### IGW Variables ###
 
 variable "igw_tags" {
   type    = map(any)
   default = {}
+}
+
+### EIP Variables ###
+
+variable "eip_tags" {
+  type    = map(any)
+  default = {}
+}
+
+### NAT Variables ###
+
+variable "nat_tags" {
+  type    = map(any)
+  default = {}
+}
+
+### Public Route Table Variables ###
+
+variable "public_rtb_tags" {
+  type    = map(any)
+  default = {}
+}
+
+### Private Route Table Variables ###
+
+variable "private_rtb_tags" {
+  type    = map(any)
+  default = {}
+}
+
+### Database Route Table Variables ###
+
+variable "database_rtb_tags" {
+  type    = map(any)
+  default = {}
+}
+
+### Peering Variables ###
+
+variable "is_peering_required" {
+  type    = bool
+  default = false
+}
+
+variable "peer_vpc_id" {
+  type    = string
+  default = ""
 }

@@ -1,3 +1,3 @@
 locals {
-  availability_zones = slice(data.aws_availability_zones.available.names, 0, 2)
+  availability_zones = slice(data.aws_availability_zones.this.names, 0, 2)
 }

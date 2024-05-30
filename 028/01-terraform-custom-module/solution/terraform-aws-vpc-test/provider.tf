@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         = "harshadevops-practice"
-    key            = "assignment-27.1"
+    key            = "assignment-28.1"
     region         = "us-east-1"
     dynamodb_table = "harshadevops"
   }

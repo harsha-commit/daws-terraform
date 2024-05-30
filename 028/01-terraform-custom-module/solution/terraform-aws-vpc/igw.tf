@@ -1,4 +1,6 @@
-resource "aws_internet_gateway" "gw" {
+### Internet Gateway ###
+
+resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.main.id
 
   tags = merge(var.common_tags, var.igw_tags, {
