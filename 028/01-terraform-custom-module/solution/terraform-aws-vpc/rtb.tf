@@ -76,20 +76,20 @@ resource "aws_route_table_association" "database" {
   route_table_id = aws_route_table.database.id
 }
 
-### Public Subnet to VPC Peering Route ###
+### Public Subnet to Default Subnet VPC Peering Route ###
 resource "aws_route" "public_peering" {
-  count                  = var.is_peering_required ? 1 : 0
+  count                  = var.is_peering_required && var.peer_vpc_id == "" ? 1 : 0
   route_table_id         = aws_route_table.public.id
-  destination_cidr_block = data.aws_vpc_peering_connection.this.cidr_block
+  destination_cidr_block = data.aws_vpc.this.cidr_block
   # count generates tuple, so we have to use indexing
   vpc_peering_connection_id = aws_vpc_peering_connection.this[0].id
 }
 
-### Default Subnet to VPC Peering Route ###
+### Default Subnet to Public Subnet VPC Peering Route ###
 resource "aws_route" "default_peering" {
   count                     = var.is_peering_required && var.peer_vpc_id == "" ? 1 : 0
-  route_table_id            = aws_route_table.public.id
-  destination_cidr_block    = data.aws_vpc_peering_connection.this.cidr_block
+  route_table_id            = data.aws_vpc.this.main_route_table_id
+  destination_cidr_block    = aws_vpc.main.cidr_block
   vpc_peering_connection_id = aws_vpc_peering_connection.this[0].id
 }
 

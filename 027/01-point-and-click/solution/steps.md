@@ -26,3 +26,4 @@
 10. Edit route of public route table, to point to Internet Gateway for internet
 11. Edit route of private and database route tables, to point to NAT Gateway for internet
 12. Associate Route tables to corresponding subnets
+    ...

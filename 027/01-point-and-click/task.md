@@ -2,9 +2,9 @@
 
 ## Goals
 
-- Demonstrate VPC, Subnets, Route Tables, Internet Gateway, NAT Gateway in two Availability Zones
+- Demonstrate VPC, Subnets, Route Tables, Internet Gateway, NAT Gateway, Peering in two Availability Zones
 - Use AWS Point and Click Approach
 
 ## Desired Result
 
-![](./vpc-v2.drawio.svg)
+![](./vpc-v3.drawio.svg)
