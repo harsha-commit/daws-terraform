@@ -11,3 +11,5 @@
 ![](../assignment-svgs/vpc-v4.drawio.svg)
 
 ## Desired Result
+
+![](../assignment-svgs/vpc-v5.drawio.svg)
