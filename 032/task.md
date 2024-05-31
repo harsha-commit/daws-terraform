@@ -10,6 +10,4 @@
 
 ![](../assignment-svgs/vpc-v5.drawio.svg)
 
-## Desired Result
-
-![](../assignment-svgs/vpc-v6.drawio.svg)
+## Desired Res
