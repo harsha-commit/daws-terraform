@@ -50,13 +50,4 @@ module "db" {
       option_settings = [
         {
           name  = "SERVER_AUDIT_EVENTS"
-          value = "CONNECT"
-        },
-        {
-          name  = "SERVER_AUDIT_FILE_ROTATIONS"
-          value = "37"
-        },
-      ]
-    },
-  ]
-}
+          value 

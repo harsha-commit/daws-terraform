@@ -13,8 +13,3 @@ variable "common_tags" {
     Terraform   = true
   }
 }
-
-### DB Tags ###
-variable "db_tags" {
-  default = {}
-}
