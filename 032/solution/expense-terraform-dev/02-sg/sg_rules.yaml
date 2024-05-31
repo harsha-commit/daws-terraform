@@ -1,0 +1,36 @@
+- name: SG Rules for Expense Project
+  method: The left component accepts the request from the right component
+  sg:
+    - expense-dev-db-sg
+    - expense-dev-backend-sg
+    - expense-dev-frontend-sg
+    - expense-dev-bastion-sg
+    - expense-dev-ansible-sg
+  rules:
+    db:
+      - name: db_backend
+        port: 3306
+      - name: db_bastion
+        port: 3306
+      - name: db_ansible
+        port: 3306
+    backend:
+      - name: backend_frontend
+        port: 8080
+      - name: backend_bastion
+        port: 22
+      - name: backend_ansible
+        port: 22
+    frontend:
+      - name: frontend_public
+        port: 80
+      - name: frontend_bastion
+        port: 22
+      - name: frontend_ansible
+        port: 22
+    bastion:
+      - name: bastion_public
+        port: 22
+    ansible:
+      - name: ansible_public
+        port: 22
