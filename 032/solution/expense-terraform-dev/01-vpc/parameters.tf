@@ -12,18 +12,24 @@ resource "aws_ssm_parameter" "vpc_cidr_block" {
 
 resource "aws_ssm_parameter" "public_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/public_subnet_ids"
-  type  = "StringList"
-  value = module.vpc-test.public_subnet_ids
+  type  = "StringList" # StringList == Strings separated by commas
+  value = join(",", module.vpc-test.public_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "private_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/private_subnet_ids"
   type  = "StringList"
-  value = module.vpc-test.private_subnet_ids
+  value = join(",", module.vpc-test.private_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "database_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/database_subnet_ids"
   type  = "StringList"
-  value = module.vpc-test.database_subnet_ids
+  value = join(",", module.vpc-test.database_subnet_ids)
+}
+
+resource "aws_ssm_parameter" "database_subnet_group_name" {
+  name  = "/${var.project_name}/${var.environment}/database_subnet_group_name"
+  type  = "String"
+  value = module.vpc-test.database_subnet_group_name
 }

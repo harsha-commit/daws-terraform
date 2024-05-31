@@ -4,35 +4,33 @@ module "db" {
   identifier = "${var.project_name}-${var.environment}-db"
 
   engine            = "mysql"
-  engine_version    = "5.7"
-  instance_class    = "db.t3a.large"
+  engine_version    = "8.0"
+  instance_class    = "db.t3.micro"
   allocated_storage = 5
 
-  db_name  = "demodb"
-  username = "user"
+  db_name  = "transactions" # Default Schema for Expenses Project
+  username = "root"
   port     = "3306"
 
-  iam_database_authentication_enabled = true
+  # CHANGES FOR DEMO PURPOSES
+  manage_master_user_password = false
+  password                    = "ExpenseApp1"
+  skip_final_snapshot         = true
 
-  vpc_security_group_ids = ["sg-12345678"]
+  vpc_security_group_ids = [data.aws_ssm_parameter.db_sg_id.value]
 
-  tags = {
-    Owner       = "user"
-    Environment = "dev"
-  }
+  tags = merge(var.common_tags, var.db_tags, {
+    Name = "${var.project_name}-${var.environment}-db"
+  })
 
   # DB subnet group
-  create_db_subnet_group = true
-  subnet_ids             = ["subnet-12345678", "subnet-87654321"]
+  db_subnet_group_name = data.aws_ssm_parameter.database_subnet_group_name.value
 
   # DB parameter group
-  family = "mysql5.7"
+  family = "mysql8.0"
 
   # DB option group
-  major_engine_version = "5.7"
-
-  # Database Deletion Protection
-  deletion_protection = true
+  major_engine_version = "8.0"
 
   parameters = [
     {
