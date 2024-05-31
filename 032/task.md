@@ -11,4 +11,4 @@
 
 ## Desired Result
 
-![](../assignment-svgs/vpc-v6.dra
+![](../assignment-svgs/vpc-v6.drawio.svg)

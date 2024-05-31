@@ -17,4 +17,20 @@
     backend:
       - name: backend_frontend
         port: 8080
-      - name: backen
+      - name: backend_bastion
+        port: 22
+      - name: backend_ansible
+        port: 22
+    frontend:
+      - name: frontend_public
+        port: 80
+      - name: frontend_bastion
+        port: 22
+      - name: frontend_ansible
+        port: 22
+    bastion:
+      - name: bastion_public
+        port: 22
+    ansible:
+      - name: ansible_public
+        port: 22
