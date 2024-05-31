@@ -10,7 +10,7 @@
 
 ## Existing VPC State
 
-![](../assignment-svgs/vpc-v3.drawio.svg)
+![](../assignment-svgs/vpc-v4.drawio.svg)
 
 ---
 
