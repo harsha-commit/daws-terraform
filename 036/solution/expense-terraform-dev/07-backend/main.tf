@@ -78,7 +78,7 @@ resource "aws_lb_target_group" "backend" {
   name     = "${var.project_name}-${var.environment}-${var.common_tags.Component}"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = data.aws_ssm_parameter.vpc_id
+  vpc_id   = data.aws_ssm_parameter.vpc_id.value
 
   health_check {
     path                = "/health"
