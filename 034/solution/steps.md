@@ -23,12 +23,12 @@
 - Create Auto Scaling Group using the launch template
   - Configure
     - VPC and Subnets
-    - Load Balancer and its Target Group (ASG manages only its created instances in Target group)
+    - Load Balancer and its Target Group (ASG manages only its registered instances in Target group)
     - Health checks, Monitoring
     - Scaling
     - Instance Maintainance Policy for Scaling
 - Bonus
   - Update an EC2 Instance (enable nginx service)
   - Create an AMI from this
-  - Update Target Group's version by updating the AMI
+  - Update Target Group's version by updating with new AMI
   - Perform Instance Refresh

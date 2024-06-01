@@ -1,0 +1,43 @@
+- name: SG Rules for Expense Project
+  description: The left component accepts the request from the right component
+    example: X_Y means X component's rule for accepting (ingress) from Y
+  sg:
+    - expense-dev-db-sg
+    - expense-dev-backend-sg
+    - expense-dev-frontend-sg
+    - expense-dev-bastion-sg
+    - expense-dev-backend_alb
+    - expense-dev-vpn
+  rules:
+    db:
+      - name: db_backend
+        port: 3306
+      - name: db_bastion
+        port: 3306
+      - name: db_vpn
+        port: 3306
+    backend:
+      - name: backend_backend_alb
+        port: 8080
+      - name: backend_bastion
+        port: 22
+      - name: backend_vpn_http
+        port: 8080
+      - name: backend_vpn_ssh
+        port: 22
+    frontend:
+      - name: frontend_public
+        port: 80
+      - name: frontend_bastion
+        port: 22
+    bastion:
+      - name: bastion_public
+        port: 22
+    backend_alb:
+      - name: backend_alb_frontend
+        port: 80/ 443
+      - name: backend_alb_vpn
+        port: 80/ 443
+    vpn:
+      - name: vpn_public
+        port: 943, 443, 22, 1194 # open vpn security rules

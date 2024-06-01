@@ -1,0 +1,3 @@
+- Create Database Instance
+- Perform ansible pull using remote-exec by null resource
+- Update ansible code as required
