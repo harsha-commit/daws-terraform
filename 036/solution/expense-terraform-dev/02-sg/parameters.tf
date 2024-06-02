@@ -33,3 +33,9 @@ resource "aws_ssm_parameter" "backend_alb_sg_id" {
   type  = "String"
   value = module.backend_alb.sg_id
 }
+
+resource "aws_ssm_parameter" "frontend_alb_sg_id" {
+  name  = "/${var.project_name}/${var.environment}/frontend_alb_sg_id"
+  type  = "String"
+  value = module.frontend_alb.sg_id
+}

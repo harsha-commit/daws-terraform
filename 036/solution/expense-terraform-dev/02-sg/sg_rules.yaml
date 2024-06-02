@@ -8,6 +8,7 @@
     - expense-dev-bastion-sg
     - expense-dev-backend_alb
     - expense-dev-vpn
+    - expense-dev-frontend_alb
   rules:
     db:
       - name: db_backend
@@ -30,6 +31,8 @@
         port: 80
       - name: frontend_bastion
         port: 22
+      - name: frontend_frontend_alb
+        port: 80
     bastion:
       - name: bastion_public
         port: 22
@@ -41,3 +44,8 @@
     vpn:
       - name: vpn_public
         port: 943, 443, 22, 1194 # open vpn security rules
+    frontend_alb:
+      - name: frontend_alb_public_http
+        port: 80
+      - name: frontend_alb_public_https
+        port: 443

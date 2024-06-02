@@ -11,12 +11,10 @@ variable "common_tags" {
     Project     = "expense"
     Environment = "dev"
     Terraform   = true
-    Component   = "backend"
   }
 }
 
-### Bastion Instance Tags ###
-variable "backend_tags" {
+variable "frontend_alb_tags" {
   default = {}
 }
 

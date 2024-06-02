@@ -52,3 +52,12 @@ module "vpn" {
   vpc_id         = data.aws_ssm_parameter.vpc_id.value # .value for paramaters
   inbound_rules  = var.vpn_sg_rules
 }
+
+module "frontend_alb" {
+  source         = "../terraform-aws-sg"
+  project_name   = var.project_name
+  sg_name        = "frontend-alb"
+  environment    = var.environment
+  sg_description = "Security Group for Frontend ALB Instance/s"
+  vpc_id         = data.aws_ssm_parameter.vpc_id.value # .value for paramaters
+}
