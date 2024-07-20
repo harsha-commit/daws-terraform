@@ -1,28 +1,18 @@
-### Project Variables ###
+# Project Variables
 
 variable "project_name" {
   type = string
 }
 
 variable "environment" {
-  type    = string
-  default = "dev"
+  type = string
 }
 
-variable "common_tags" {
-  type = map(any)
-}
-
-### VPC Variables ###
+# VPC Variables
 
 variable "cidr_block" {
   type    = string
   default = "10.0.0.0/16"
-}
-
-variable "instance_tenancy" {
-  type    = string
-  default = "default"
 }
 
 variable "enable_dns_hostnames" {
@@ -40,106 +30,72 @@ variable "vpc_tags" {
   default = {}
 }
 
-### Public Subnet Variables ###
-
-variable "public_cidr_blocks" {
-  type = list(string)
-  validation {
-    condition     = length(var.public_cidr_blocks) == 2
-    error_message = "Please provide only 2 Public Subnets"
-  }
-}
-
-variable "map_public_ip_on_launch" {
-  type    = bool
-  default = true
-}
-
-variable "public_subnet_tags" {
-  type    = map(any)
-  default = {}
-}
-
-### Private Subnet Variables ###
-
-variable "private_cidr_blocks" {
-  type = list(string)
-  validation {
-    condition     = length(var.private_cidr_blocks) == 2
-    error_message = "Please provide only 2 Private Subnets"
-  }
-}
-
-variable "private_subnet_tags" {
-  type    = map(any)
-  default = {}
-}
-
-### Database Subnet Variables ###
-
-variable "database_cidr_blocks" {
-  type = list(string)
-  validation {
-    condition     = length(var.database_cidr_blocks) == 2
-    error_message = "Please provide only 2 Database Subnets"
-  }
-}
-
-variable "database_subnet_tags" {
-  type    = map(any)
-  default = {}
-}
-
-### IGW Variables ###
+# IGW Variables
 
 variable "igw_tags" {
   type    = map(any)
   default = {}
 }
 
-### EIP Variables ###
+# Subnet Variables
 
-variable "eip_tags" {
+variable "availability_zones" {
+  type = list(string)
+}
+
+variable "public_subnets" {
+  type = list(any)
+  validation {
+    condition     = length(var.public_subnets) == 2
+    error_message = "Please provide only 2 public subnets"
+  }
+}
+
+variable "private_subnets" {
+  type = list(any)
+  validation {
+    condition     = length(var.private_subnets) == 2
+    error_message = "Please provide only 2 private subnets"
+  }
+}
+
+variable "database_subnets" {
+  type = list(any)
+  validation {
+    condition     = length(var.database_subnets) == 2
+    error_message = "Please provide only 2 database subnets"
+  }
+}
+
+variable "subnet_tags" {
   type    = map(any)
   default = {}
 }
 
-### NAT Variables ###
+# NAT Variables
 
 variable "nat_tags" {
   type    = map(any)
   default = {}
 }
 
-### Public Route Table Variables ###
+# EIP Variables
 
-variable "public_rtb_tags" {
+variable "eip_tags" {
   type    = map(any)
   default = {}
 }
 
-### Private Route Table Variables ###
+# RTB Variable
 
-variable "private_rtb_tags" {
+variable "rtb_tags" {
   type    = map(any)
   default = {}
 }
 
-### Database Route Table Variables ###
+# Peering Variables
 
-variable "database_rtb_tags" {
+variable "peering_tags" {
   type    = map(any)
   default = {}
-}
-
-### Peering Variables ###
-
-variable "is_peering_required" {
-  type    = bool
-  default = false
-}
-
-variable "peer_vpc_id" {
-  type    = string
-  default = ""
 }

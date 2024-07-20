@@ -1,3 +1,7 @@
 locals {
-  availability_zones = slice(data.aws_availability_zones.this.names, 0, 2)
+  common_tags = {
+    Project     = var.project_name
+    Environment = var.environment
+    Terraform   = true
+  }
 }

@@ -1,4 +1,8 @@
-- Add Database Subnet Group
+# Assignment 30
+
+## Goals
+
+- Add Database Subnet Group (Use \* for list of database subnet ids)
 - Provide Outputs in Module(useful for other modules/ user)
   - VPC ID
   - Public Subnet IDs

@@ -7,13 +7,13 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "harshadevops-practice"
-    key            = "assignment-28.1"
-    region         = "us-east-1"
-    dynamodb_table = "harshadevops"
+    bucket = "harshadevops-practice"
+    key    = "assignment-28"
+    region = "us-east-1"
   }
 }
 
+# Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
